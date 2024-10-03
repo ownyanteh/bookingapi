@@ -1,6 +1,7 @@
 import express from 'express';
 import { bookingRouter } from './routes/all-routes.js';
 import mongoose from 'mongoose';
+import cors from "cors"
 // import 'dotenv/config'
 
 // connect database
@@ -15,6 +16,7 @@ const booking = express();
 // });
 booking.use(express.json());
 booking.use(bookingRouter);
+booking.use(cors());
 
 
 // listen for incoming request
